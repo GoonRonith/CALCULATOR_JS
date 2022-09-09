@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .flex-container{
+            background-color: #e022e0;
+            display: grid;
+            justify-content: center;
+            flex-direction:column ;
+            align-items:center;
+             border-radius: 9px;
+             border: 5 px solid;
+             width: 100vw;
+             min-height: 100vh;
+        }
+        .button{
+            padding:10px 15px;
+            margin: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: blueviolet;
+            font-weight: bold;
+            grid-template-columns: repeat(4, 1fr);
+            color: aliceblue;
+        }
+        .button:active{
+            background-color: aqua;
+        }
+        .button1:active{
+            background-color: aqua;
+        }
+        .button3:active{
+            background-color: aqua;
+        }
+        .button3{
+            padding:10px 15px;
+            margin: 0 3px;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: rgb(223, 172, 6);
+            position: relative;
+            font-weight: bold; 
+        }
+        .row{
+            margin: 0;
+            padding: 10px 38px;
+            border-radius: 5px;
+        }
+        .row input{
+            font-size: 15x;
+            margin: 0;
+            padding: 18px 18px;
+            border-radius: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+             rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+             border: 2px solid rgb(26, 23, 23);
+            width: 100%;
+            text-align: end;
+        }
+        .design{
+            height: auto;
+            width: 100%;
+            margin-top: 25px;
+            border-radius: 10px;
+            background-color: rgba(126, 243, 227, 0.473);
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+            border: 4px solid rgb(19, 17, 17);
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            
+
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .button1{
+            padding:10px 15px;
+            margin: 0 3px;
+            border: 4px solid rgb(12, 14, 13);
+            border-radius: 9px;
+            cursor: pointer;
+            background-color: red;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="design">
+    <div class="row">
+        <input class="input" id="in" type="text"/>
+    </div>
+    <div class="row">
+    <button   class='button' onclick="check('1')">1</button>
+    <button   class='button' onclick="check('2')">2</button>
+    <button   class='button' onclick="check('3')">3</button>
+    <button   class='button3 button' onclick="calculate()">=</button>
+ </div>
+<div class="row">
+    <button  class='button' onclick="check('4')">4</button>
+    <button  class='button' onclick="check('5')">5</button>
+    <button  class='button' onclick="check('6')">6</button>
+    <button  class='button' onclick="check('7')">7</button>
+    </div>
+
+    <div class="row">
+    <button  class='button' onclick="check('8')">8</button>
+    <button  class='button' onclick="check('9')">9</button>
+    <button  class='button' onclick="check('0')">0</button>
+    <button  class='button' onclick="check('*')">*</button>
+    </div>
+    <div class="row">
+        
+    <button   class='button' onclick="check('/')">/</button>
+    <button  class='button' onclick="check('+')">+</button>
+    <button  class='button' onclick="check('-')">-</button>
+    <button  class='button1' onclick="clearResult()">C</button>
+</div>
+</div>
+</div>
+    <script>
+        function check(num){
+            let a = document.getElementById('in')
+            a.value += num
+        }
+
+        function calculate(){
+            let a = document.getElementById('in')
+            a.value=eval(a.value)
+        }
+
+        function clearResult(){
+            let a = document.getElementById('in')
+            a.value =""
+        }
+    </script>
+</body>
+</html>
